@@ -1,6 +1,8 @@
 # Despliegue de un Pipeline usando ArgoCD
 
 Este pipeline se crea a través de ArgoCD. Posteriormente, se deben completar los campos al ejecutar el **PipelineRun**.
+>**Nota:** Colocar el secret que contiene las credenciales para conectar con el repo privado al momento de ejecutar el  **PipelineRun**.
+
 
 ---
 
