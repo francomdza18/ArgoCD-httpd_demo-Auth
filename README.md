@@ -6,5 +6,5 @@
 4. Crear el **`PipelineRun`** del **Pipeline** generado y asignar en **`source`** el PVC creado.  
 5. Visitar la URL generada.
 
-> ⚠️ *Este ejemplo está pensado para un repositorio público, por lo que no se requiere un archivo de autenticación.*
+> ⚠️ *Este ejemplo está pensado para un repositorio privado, por lo que se requiere un archivo de autenticación.*
 
