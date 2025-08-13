@@ -1,0 +1,47 @@
+﻿kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: deployment-app-github
+  labels:
+    app: deployment-app-github
+    app.kubernetes.io/component: deployment-app-github
+    app.kubernetes.io/instance: deployment-app-github
+    app.kubernetes.io/name: deployment-app-github
+    app.kubernetes.io/part-of: deployment-app-github
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deployment-app-github
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: deployment-app-github
+        deployment: deployment-app-github
+      annotations:
+        openshift.io/generated-by: OpenShiftWebConsole
+    spec:
+      containers:
+        - name: deployment-app-github
+          # editar el Image repository al deseado
+          image: 'image-registry.openshift-image-registry.svc:5000/demo-pipeline/imagestream-app:latest'
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600

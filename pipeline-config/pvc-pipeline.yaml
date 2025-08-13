@@ -1,0 +1,12 @@
+﻿kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: pipeline-data
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 5Gi
+  storageClassName: ocs-external-storagecluster-cephfs
+  volumeMode: Filesystem

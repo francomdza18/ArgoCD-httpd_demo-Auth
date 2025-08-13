@@ -1,0 +1,29 @@
+﻿kind: Service
+apiVersion: v1
+metadata:
+  name: service-github-app
+  labels:
+    app: deployment-app-github
+    app.kubernetes.io/component: deployment-app-github
+    app.kubernetes.io/instance: deployment-app-github
+    app.kubernetes.io/name: deployment-app-github
+    app.kubernetes.io/part-of: deployment-app-github
+spec:
+  ipFamilies:
+    - IPv4
+  ports:
+    - name: 8080-tcp
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+    - name: 8443-tcp
+      protocol: TCP
+      port: 8443
+      targetPort: 8443
+  internalTrafficPolicy: Cluster
+  type: ClusterIP
+  ipFamilyPolicy: SingleStack
+  sessionAffinity: None
+  selector:
+    app: deployment-app-github
+    deployment: deployment-app-github
