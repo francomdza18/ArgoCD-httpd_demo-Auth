@@ -4,14 +4,12 @@ Este pipeline se crea a través de ArgoCD. Posteriormente, se deben completar lo
 >**Nota:** Colocar el secret que contiene las credenciales para conectar con el repo privado al momento de ejecutar el  **PipelineRun**.
 
 
----
 
 ## Tareas que realiza este Pipeline
 
 - **Git Clone**
 - **Buildah**
 
----
 
 ### 🛠️ Tarea: Git Clone
 
@@ -20,7 +18,6 @@ Este pipeline se crea a través de ArgoCD. Posteriormente, se deben completar lo
 - Usa varios parámetros opcionales (como `SUBMODULES`, `SSL_VERIFY`, etc.).
 - Almacena el código en un *workspace* llamado `source`.
 
----
 
 ### 🛠️ Tarea: Buildah
 
