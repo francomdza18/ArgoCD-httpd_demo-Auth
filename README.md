@@ -4,7 +4,7 @@
 
 
 # Despliegue de una página web usando Argo y Pipelines
-**ArgoCD-httpd_demo-noAuth** es una applicacion pensada para ejecutar dentro de **ArgoCD**.
+**ArgoCD-httpd_demo-Auth** es una applicacion pensada para ejecutar dentro de **ArgoCD**.
 
 ## Instalación
 Sigue los pasos a continuación para configurar y ejecutar la aplicación:
